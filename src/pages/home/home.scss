@@ -1,3 +1,36 @@
 page-home {
+    .articles, .source{
+        border-radius: 25px;
+    }
 
+    img{ 
+        border-radius: 0px;
+    }
+    
+    .first{
+        border-radius: 25px 0px 0px 0px;
+    }
+
+    .last{
+        border-radius: 0px 0px 0px 25px;
+    }
+
+    .elemento:hover{
+        background-color: color($colors,secondary);  //when clicked, change colour from the main page
+    }
+
+    .source{
+        margin: 10px;
+        width: 98%;
+    }
+
+    .articles{
+        background-color: color($colors, secondary);
+        width: 95%;
+    }
+
+    .body{
+        background-color: color($colors, secondary);//background colour
+    }
+    
 }

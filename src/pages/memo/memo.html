@@ -1,0 +1,38 @@
+<ion-header>
+  <ion-navbar color="primary">
+    <ion-title>Frequency</ion-title>
+  </ion-navbar>
+</ion-header>
+
+<ion-content padding class="body">
+  <ion-list radio-group [(ngModel)]="frequency">
+
+    <ion-item padding-right class="elemento">
+      <ion-label>Daily</ion-label>
+      <ion-radio value="Daily"></ion-radio>
+    </ion-item>
+
+    <ion-item padding-right class="elemento">
+      <ion-label>Once a week</ion-label>
+      <ion-radio value="Once a week"></ion-radio>
+    </ion-item>
+
+    <ion-item padding-right class="elemento">
+      <ion-label>Twice a week</ion-label>
+      <ion-radio value="Twice a week"></ion-radio>
+    </ion-item>
+
+    <ion-item padding-right class="elemento">
+      <ion-label>Once a month</ion-label>
+      <ion-radio value="Once a month"></ion-radio>
+    </ion-item>
+
+    <ion-item padding-right class="elemento">
+        <ion-label>I don't really read any article much</ion-label>
+        <ion-radio value="I don't really read any article much"></ion-radio>
+      </ion-item>
+
+  </ion-list>
+
+  <button (click)="Submit()" ion-button round>Submit</button>
+</ion-content>

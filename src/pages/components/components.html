@@ -1,0 +1,37 @@
+<ion-header>
+
+  <ion-navbar color="danger"> 
+    <ion-title>{{articolo.source.name}}</ion-title>
+    <ion-buttons end>
+      <button ion-button (click)="closeModal()" >close<ion-icon name="md-close-circle"></ion-icon></button>
+    </ion-buttons>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content class="body">
+  <ion-card class="articles">
+      <img src="{{articolo.urlToImage}}" class="immagine" *ngIf="articolo.urlToImage" imageViewer />
+      <ion-card-content>
+      <h2>{{articolo.title}}</h2>
+       <p text-wrap>{{articolo.description}}</p>
+       <ion-item *ngIf="articolo.author" class="articles">
+        Author:
+         <ion-note item-end>
+           {{articolo.author}}
+         </ion-note>
+       </ion-item> 
+       <ion-item *ngIf="articolo.publishedAt" class="articles">
+        publication date :
+         <ion-note item-end>
+           {{articolo.publishedAt}}
+         </ion-note>
+       </ion-item> 
+      </ion-card-content>
+  </ion-card>
+
+        <ion-buttons>
+              <button ion-button round full color="Medium" (click)="openBrowser()"><ion-icon name="heart"></ion-icon>Open In Browser <ion-icon name="heart"></ion-icon></button>
+        </ion-buttons>
+</ion-content>

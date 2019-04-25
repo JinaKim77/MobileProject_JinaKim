@@ -1,14 +1,40 @@
 <ion-header>
-  <ion-navbar>
-    <ion-title>
-      Ionic Blank
-    </ion-title>
+  <ion-navbar color="primary">
+    <ion-title><h4 style="text-align:center"><ion-icon  name="logo-tux"></ion-icon>Jina's World News<ion-icon  name="logo-tux"></ion-icon></h4></ion-title>
+    <ion-buttons end>
+      <button ion-button>
+      <ion-icon name="alarm"></ion-icon></button>
+      <button ion-button>
+      <ion-icon name="logo-angular"></ion-icon></button>
+    </ion-buttons>       
   </ion-navbar>
 </ion-header>
-
-<ion-content padding>
-  The world is your oyster.
-  <p>
-    If you get lost, the <a href="http://ionicframework.com/docs/v2">docs</a> will be your guide.
-  </p>
+ 
+<ion-content class="body" >
+    <ion-item padding-right class="source" color="danger">
+        <ion-label><ion-icon  name="md-search"></ion-icon>Search :</ion-label>
+        <ion-select name="selected" [(ngModel)]="selectedSource" (ionChange)="loadData()" interface="action-sheet" submitText="Okay" cancelText="Cancel">
+        <ion-option *ngFor="let item of source"  value="{{item.id}}">{{item.name}}</ion-option>
+        </ion-select>
+    </ion-item>
+    
+  <ion-card class="articles" color="primary">
+    <ion-list *ngFor="let x of articles; let i = index">
+      <ion-item class="elemento">
+        <ion-thumbnail item-start *ngIf="x.urlToImage">
+          <img src="{{x.urlToImage}}"  class='thumb' [class.first]="i == 0" [class.last]="i == articles.length-1" alt="Errore" imageViewer>
+        </ion-thumbnail>
+        <p text-wrap>{{x.title}}</p>
+        <button ion-button item-end color="primary" (click)="openModal(this.x)"><ion-icon name="md-eye">view</ion-icon>
+        </button>
+      </ion-item>
+    </ion-list>
+  </ion-card>
+  <button ion-button icon-left small color="primary" (click)="toggleAppTheme()">
+      <ion-icon  name="bulb">Bright</ion-icon>
+  </button>
+  
+  <ion-label color="danger"><h5 style="text-align:center"> How often do you read news articles?</h5></ion-label>
+  <ion-label color="danger"><h6 style="text-align:center">{{information}}</h6></ion-label>
+  <button ion-button round full color="Medium"  (click)="openMemoPage()">Update</button> 
 </ion-content>

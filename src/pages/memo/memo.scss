@@ -1,0 +1,11 @@
+page-memo {
+    .elemento:hover{
+        background-color: color($colors,one);  //when clicked, change colour from the main page
+        border-radius: 25px;
+    }
+
+    .body{
+        background-color: color($colors, one);//background colour
+    }
+    
+}
