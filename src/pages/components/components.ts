@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { IonicPage, NavController, NavParams, ViewController } from 'ionic-angular';
 import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { SettingsProvider } from './../../providers/settings/settings';
-import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 
 /**
  * Generated class for the ComponentsPage page.
@@ -21,7 +20,7 @@ export class ComponentsPage {
   data;
   selectedTheme: String;
 
-  constructor(private socialSharing: SocialSharing,public navCtrl: NavController, public navParams: NavParams,private viewCtrl: ViewController,public iab: InAppBrowser,private settings: SettingsProvider) {
+  constructor(public navCtrl: NavController, public navParams: NavParams,private viewCtrl: ViewController,public iab: InAppBrowser,private settings: SettingsProvider) {
     this.settings.getActiveTheme().subscribe(val => this.selectedTheme = val);
   }
 

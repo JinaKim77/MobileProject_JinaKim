@@ -2,7 +2,6 @@ import { Component } from '@angular/core';
 import { NavController, ModalController } from 'ionic-angular';
 import { Http } from '@angular/http';
 import 'rxjs/add/operator/map';
-//import {ComponentsPage} from "../components/components";
 import { LoadingController } from 'ionic-angular';
 import { AlertController } from 'ionic-angular';
 import { SettingsProvider } from './../../providers/settings/settings';

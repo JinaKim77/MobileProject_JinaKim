@@ -9,7 +9,6 @@ import { InAppBrowser } from '@ionic-native/in-app-browser/ngx';
 import { MyApp } from './app.component';
 import { HomePage } from '../pages/home/home';
 import { SettingsProvider } from '../providers/settings/settings';
-import { SocialSharing } from '@ionic-native/social-sharing/ngx';
 import { IonicStorageModule } from '@ionic/storage';
 
 
@@ -35,8 +34,7 @@ import { IonicStorageModule } from '@ionic/storage';
     SplashScreen,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     InAppBrowser,
-    SettingsProvider,
-    SocialSharing
+    SettingsProvider
   ]
 })
 export class AppModule {}
